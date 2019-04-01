@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>EY KPMG Soduko</title>
+    
+    
+    <script language="JavaScript" src="src/controll.js"></script>
+</head>
+
+<style>
+#hide{display: none;padding-top: 15px;}
+</style>  
+
+<body onload="initializeAll();checkDataBase()"> 
+<span>
+    <div style="position:relative;">
+    <div><a href="https://www2.deloitte.com/global/en.html" target="_blank">Deloitte.</a></div>
+    <div><a href="https://www.pwc.com" target="_blank">PwC</a></div>
+    <div><a href="https://home.kpmg/xx/en/home.html" target="_blank">KPMG</a></div>
+    <div><a href="https://www.ey.com" target="_blank">EY</a></div>
+    <div style="height:20px;"></div></div>
+</span>
+<span>
+    <div style="position:relative;">
+	<div>This page is created to solve:</div>
+    <div>EY Deductive Logical Thinking(Soduku)</div>
+    <div>KPMG Deductive Logical Thinking(Soduku)</div>
+    <div style="height:20px;"></div>
+</span>
+<span>
+	<button onclick="showAndHideGuideline()" id="guideLineButton" style="height:50px;width:200px">Click me to see the guideline</button>
+</span>
+
+
+
+<div id="hide">zZ
+	<div>The guideline will demonstrate how to use this computation tool by explaining a real example.</div>
+	<div></div>
+	<div>Let us see the real question of EY deductive logical thinking question.</div>
+	<img src="src/example.png"></img><div style="height:20px;"></div>
+	<div>When you click any box inside 5x5 matrix, the image of that box would change, keep clicking it until the image of the box change to the image you want.</div>
+
+	<img src="src/step1.jpg"></img>
+	<div>OK, let us see the question, the row 1 column 2 is a star, let us click it make it become a star, well done!</div>
+	<img src="src/step2.jpg"></img><div style="height:20px;"></div>
+	<div>We do the same thing with all boxes so that all boxes images are as same as those in question.</div>
+	<img src="src/step3.jpg"></img><div style="height:20px;"></div>
+	<div>Click the "compute" button.</div>
+	<img src="src/step4.jpg"></img><div style="height:20px;"></div>
+	<div>After computation, all boxes are well filled.</div>
+	<img src="src/step5.jpg"></img><div style="height:20px;"></div>
+	<div>Find the position the "?" mark in question(left), and check the answer(right), the answer is triangle!</div>
+	<img src="src/step6.jpg"></img><div style="height:20px;"></div>
+	<div>Click "reset" button and move on to next question.</div>
+	<img src="src/step7.jpg"></img><div style="height:20px;"></div>
+	
+	
+	
+	
+</div>
+
+<div style="height:20px;"></div></div>
+
+<span>
+    <table style="border:3px #cccccc solid;" cellpadding="10" border='1'>
+        <tr>
+            <td><img id="00" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(0,0)"></td>
+            <td><img id="01" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(0,1)"></td>
+            <td><img id="02" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(0,2)"></td>
+            <td><img id="03" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(0,3)"></td>
+            <td><img id="04" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(0,4)"></td>
+        </tr>
+        
+        
+        
+        <tr>
+            <td><img id="10" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(1,0)"></td>
+            <td><img id="11" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(1,1)"></td>
+            <td><img id="12" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(1,2)"></td>
+            <td><img id="13" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(1,3)"></td>
+            <td><img id="14" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(1,4)"></td>
+        </tr>
+        
+        <tr>
+            <td><img id="20" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(2,0)"></td>
+            <td><img id="21" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(2,1)"></td>
+            <td><img id="22" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(2,2)"></td>
+            <td><img id="23" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(2,3)"></td>
+            <td><img id="24" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(2,4)"></td>
+        </tr>
+        
+        <tr>
+            <td><img id="30" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(3,0)"></td>
+            <td><img id="31" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(3,1)"></td>
+            <td><img id="32" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(3,2)"></td>
+            <td><img id="33" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(3,3)"></td>
+            <td><img id="34" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(3,4)"></td>
+        </tr>
+        
+        <tr>
+            <td><img id="40" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(4,0)"></td>
+            <td><img id="41" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(4,1)"></td>
+            <td><img id="42" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(4,2)"></td>
+            <td><img id="43" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(4,3)"></td>
+            <td><img id="44" border="0" src="src/question.jpg" width="50" height="50"
+	            onclick="updateItemInfo(4,4)"></td>
+        </tr>
+        
+    </table>
+    <div style="height:20px;"></div></div>
+    <span>
+        <button onclick="computeResult()" style="height:50px;width:100px">compute</button>
+        <button onclick="resetResult()" style="height:50px;width:100px">reset</button>
+    </span>
+    
+</span>
+
+</body>
+
+
+
+</html>
